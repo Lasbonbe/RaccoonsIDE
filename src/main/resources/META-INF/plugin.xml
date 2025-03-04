@@ -15,4 +15,7 @@
     <applicationListeners>
         <listener class="com.github.lasbonbe.raccoonside.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+
+    <idea-version since-build="242.0" until-build="243.*"/>
+
 </idea-plugin>

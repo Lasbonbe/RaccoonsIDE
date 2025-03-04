@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Raccoon Videos</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 177.7777vh; /* 16/9 * 100 = ~177.7777 */
+            height: 100vh;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .video-container video {
+                width: 100vw;
+                height: 56.25vw; /* 9/16 * 100 = 56.25 */
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="video-container">
+    <!-- Utilisation de la balise video pour la vidéo locale -->
+    <video controls autoplay muted>
+        <!-- Remplacer le chemin par le chemin de votre fichier vidéo -->
+        <source src="../kotlin/com/github/lasbonbe/raccoonside/toolWindow/raccoon2.mp4" type="video/mp4">
+    </video>
+</div>
+</body>
+</html>

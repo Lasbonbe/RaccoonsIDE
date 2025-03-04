@@ -9,6 +9,8 @@ plugins {
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
     alias(libs.plugins.kover) // Gradle Kover Plugin
+    id("org.openjfx.javafxplugin") version "0.0.12" // JavaFX Plugin)
+
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -19,6 +21,10 @@ kotlin {
     jvmToolchain(17)
 }
 
+javafx {
+    version = "17.0.9" // Use a version compatible with Java 17
+    modules = listOf("javafx.controls", "javafx.media","javafx.swing")
+}
 // Configure project's dependencies
 repositories {
     mavenCentral()
@@ -49,6 +55,8 @@ dependencies {
     }
 
     implementation("org.openjfx:javafx-media:17")
+    implementation("org.openjfx:javafx-controls:17")
+    implementation("org.openjfx:javafx-swing:17")
 
 }
 
